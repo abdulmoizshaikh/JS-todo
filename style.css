@@ -1,0 +1,21 @@
+body{
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: 'Times New Roman', Times, serif !important;
+    
+}
+h1#heading{
+    text-align: center;
+    margin-top: 05% !important;
+    margin-bottom: 05% !important;
+    color: purple;
+}
+div.inputDiv{
+    margin: 0 auto;
+    width: 70% ; 
+}
+div#errorMsg{
+    display: none;
+    margin: 0 auto;
+    width: 50% ; 
+}
