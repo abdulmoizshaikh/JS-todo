@@ -2,13 +2,14 @@ body{
     margin: 0 auto;
     padding: 0 auto;
     font-family: 'Times New Roman', Times, serif !important;
-    
+    background-image: url("back.jpg");
 }
+
 h1#heading{
     text-align: center;
     margin-top: 05% !important;
     margin-bottom: 05% !important;
-    color: purple;
+    color:#ffff;
 }
 div.inputDiv{
     margin: 0 auto;

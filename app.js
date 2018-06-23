@@ -1,20 +1,13 @@
 var input=document.getElementById("input");
 var contentDiv=document.getElementById("contentDiv");
 var errorMsg=document.getElementById("errorMsg");
+var addTodoBtn=document.getElementById("addBtn");
 input.focus();
-
-
-function editfunc(e){
-    
-}
-
-
-
-
+var editItem;
 
 
 function add(){
-    if(input.value=="" || input.value==+" ")
+    if(input.value=="" || input.value==" ")
     {
         errorMsg.style.display="block";
         setTimeout(()=>{
@@ -39,8 +32,6 @@ function add(){
     editBtn.setAttribute("class","btn btn-light");
     editBtn.style.cssFloat="right";
     editBtn.setAttribute("onclick","editfunc(this)");
-    
-    
 
     li.appendChild(text);
     li.appendChild(deleteBtn);
@@ -57,4 +48,24 @@ function add(){
 function deletefunc(e){
     e.parentNode.parentNode.removeChild(e.parentNode);
     input.focus();
+}
+
+function editfunc(e){
+    editItem=e;
+    input.focus();
+    addTodoBtn.innerHTML="Save Todo";
+    addTodoBtn.setAttribute("class","btn btn-success");
+    addTodoBtn.setAttribute("onClick","saveTodo()");
+    input.value=e.parentNode.childNodes[0].nodeValue;
+}
+function saveTodo(){
+    var editedTodo=input.value;
+    editItem.parentNode.childNodes[0].nodeValue=editedTodo;
+    addTodoBtn.innerHTML="ADD TOdo!";
+    addTodoBtn.setAttribute("class","btn btn-success");
+    addTodoBtn.setAttribute("onClick","add()");
+    input.value="";
+    editItem=undefined;
+    input.focus();
+    
 }
